@@ -1,7 +1,7 @@
 import java.util.Calendar;
 
 public class Insurance{
-    private String insuranceID;
+    private int insuranceID;
     private String purchaser;
     private String beneficiary;
     private String insuranceType;
@@ -11,7 +11,7 @@ public class Insurance{
     private Calendar purchaseDay;
 
 
-    public String getInsuranceID() {
+    public int getInsuranceID() {
         return insuranceID;
     }
     public void setInsuranceID(){
@@ -59,9 +59,39 @@ public class Insurance{
     public void setPurchaseDay(){
         this.purchaseDay=purchaseDay;
     }
-    
-    
+    //constructor
+    public Insurance( int insuranceID, String purchaser, String beneficiary, String insuranceType, Long contractValue, Calendar startContract, Calendar endContract, Calendar purchaseDay){
+        this.insuranceID = insuranceID;
+        this.purchaser = purchaser;
+        this.beneficiary= beneficiary;
+        this.insuranceType = insuranceType;
+        this.contractValue = contractValue;
+        this.startContract = startContract;
+        this.endContract = endContract;
+        this.purchaseDay = Calendar.getInstance();
 
+    }
+    // cap nhat nguoi mua
+    public Boolean updatePurchaser(String newPurchaser){
+        updatePurchaser(newPurchaser);
+        return true;
+    }
+    // cap nhat nguoi huong loi
+    public Boolean updateBeneficiary(String newBeneficiare){
+        updateBeneficiary(newBeneficiary);
+        return true;
+    }
+    // cap nhat gia tri hop dong
+    public Boolean updateContractValue(Long newContractValue){
+        updateContractValue(newContractValue);
+        return true;
+    }
+    // cap nhat ngay bat dau bao hiem
+    public Boolean updateStartContract(Calendar newStartContract){
+        updateStartContract(newStartContract);
+        return true;
+    }
+    //
 
 
 }
